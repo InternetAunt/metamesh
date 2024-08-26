@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMesh - About Us</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --chocolate: #7b3f00;
+            --black: #000000;
+            --white: #ffffff;
+            --yellow: #ffd700;
+            --bg-color: var(--white);
+            --text-color: var(--black);
+            --nav-bg: var(--chocolate);
+            --nav-text: var(--white);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--black);
+            --text-color: var(--white);
+            --nav-bg: var(--black);
+            --nav-text: var(--yellow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--nav-bg);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--nav-text);
+            padding: 8px 15px;
+            font-weight: 600;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: var(--nav-bg);
+                border-radius: 5px;
+                width: 200px;
+            }
+
+            .menu a {
+                padding: 10px;
+                border-bottom: 1px solid var(--bg-color);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .dark-mode-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--nav-text);
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            color: var(--chocolate);
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--nav-bg);
+            color: var(--nav-text);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-member:hover {
+            background-color: var(--chocolate);
+            color: var(--white);
+        }
+
+        .btn {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--chocolate);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            MetaMesh
+        </div>
+        <div class="menu-toggle bx bx-menu"></div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="start.html">Get Started</a>
+        </div>
+        <div class="dark-mode-toggle bx bx-moon"></div>
+    </nav>
+
+    <div class="content">
+        <h1>About MetaMesh</h1>
+        <p>MetaMesh is a pioneering Web3 platform designed to revolutionize your digital interactions. Our mission is to provide a seamless and engaging experience in the decentralized world. Here’s more about who we are and what we do:</p>
+
+        <div class="team">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/100" alt="Team Member 1">
+                <h3>Christiana Thomas</h3>
+                <p>Co-Founder & CEO</p>
+                <p>Christiana is a visionary leader with a passion for blockchain technology and decentralized finance.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/100" alt="Team Member 2">
+                <h3>Adesanya Bridget</h3>
+                <p>Co-Founder & CTO</p>
+                <p>Bridget is an expert in blockchain development and oversees the technical aspects of MetaMesh.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="https://via.placeholder.com/100" alt="Team Member 3">
+                <h3>Chiamaka Johnson</h3>
+                <p>Chief Marketing Officer</p>
+                <p>Chiamaka is responsible for driving MetaMesh’s marketing strategy and building our community.</p>
+            </div>
+        </div>
+
+        <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+<footer>
+    <p style="text-align: center; padding: 160px;">&copy; 2024 Metamesh. All rights reserved.</p>
+
+</footer>
+    <!-- JavaScript for Navbar and Dark/Light Mode -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                darkModeToggle.classList.replace('bx-sun', 'bx-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                darkModeToggle.classList.replace('bx-moon', 'bx-sun');
+            }
+        });
+    </script>
+</body>
+</html>

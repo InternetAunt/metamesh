@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMesh - Contact Us</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --chocolate: #7b3f00;
+            --black: #000000;
+            --white: #ffffff;
+            --yellow: #ffd700;
+            --bg-color: var(--white);
+            --text-color: var(--black);
+            --nav-bg: var(--chocolate);
+            --nav-text: var(--white);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--black);
+            --text-color: var(--white);
+            --nav-bg: var(--black);
+            --nav-text: var(--yellow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--nav-bg);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--nav-text);
+            padding: 8px 15px;
+            font-weight: 600;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: var(--nav-bg);
+                border-radius: 5px;
+                width: 200px;
+            }
+
+            .menu a {
+                padding: 10px;
+                border-bottom: 1px solid var(--bg-color);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .dark-mode-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--nav-text);
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            color: var(--chocolate);
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--nav-bg);
+            color: var(--nav-text);
+            border-radius: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: var(--yellow);
+            color: var(--black);
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            padding: 15px;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: var(--chocolate);
+            color: var(--white);
+        }
+
+        .social-media {
+            margin-top: 30px;
+            font-size: 24px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-media a {
+            color: var(--chocolate);
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: var(--yellow);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            MetaMesh
+        </div>
+        <div class="menu-toggle bx bx-menu"></div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="start.html">Get Started</a>
+        </div>
+        <div class="dark-mode-toggle bx bx-moon"></div>
+    </nav>
+
+    <div class="content">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! If you have any questions, feedback, or just want to get in touch, please fill out the contact form below.</p>
+
+        <div class="contact-form">
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+    </div>
+    <footer>
+        <p style="text-align: center; padding: 160px;">&copy; 2024 Metamesh. All rights reserved.</p>
+
+    </footer>
+    <!-- JavaScript for Navbar and Dark/Light Mode -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                darkModeToggle.classList.replace('bx-sun', 'bx-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                darkModeToggle.classList.replace('bx-moon', 'bx-sun');
+            }
+        });
+    </script>
+</body>
+</html>

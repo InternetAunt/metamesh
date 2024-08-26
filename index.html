@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMesh</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            --chocolate: rgb(123, 63, 0);
+            --black: #000000;
+            --white: #ffffff;
+            --yellow: #ffd700;
+            --bg-color: var(--white);
+            --text-color: var(--black);
+            --nav-bg: var(--chocolate);
+            --nav-text: var(--white);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--black);
+            --text-color: var(--white);
+            --nav-bg: var(--black);
+            --nav-text: var(--yellow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--nav-bg);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--nav-text);
+            padding: 8px 15px;
+            font-weight: 600;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .trans > span {
+  text-transform: uppercase;
+  /* font-size: 50px; */
+  animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+  0%, 100% {
+    color: #FFF;
+    text-shadow: 0 0 10px rgb(123, 63, 0), 0 0 50px rgb(194, 133, 68), 0 0 100px rgb(123, 63, 0);
+  }
+
+
+10%, 90% {
+  color:rgb(123, 63, 0);
+  text-shadow: none;
+}
+}
+.trans > span:nth-child(2) {
+	animation-delay: 0.25s;
+}
+.trans > span:nth-child(3) {
+	animation-delay: 0.5s;
+}
+.trans > span:nth-child(4) {
+	animation-delay: 0.75s;
+}
+
+.trans > span:nth-child(5) {
+	animation-delay: 1s;
+}
+
+.trans{
+    padding: 180px;
+    margin-left: 10px;
+}
+.trans span{
+    font-size: 4.1rem;
+}
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: var(--nav-bg);
+                border-radius: 5px;
+                width: 200px;
+            }
+            /* #open{
+  display: none;
+  color: var(--hover-color);
+  font-size: 20px;
+} */
+
+            .menu a {
+                padding: 10px;
+                border-bottom: 1px solid var(--bg-color);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .dark-mode-toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--nav-text);
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            color: var(--chocolate);
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+
+        .trans > span {
+  text-transform: uppercase;
+  font-size:50px;
+  
+  /* animation: glow 2s ease-in-out infinite; */
+        }
+        .btn {
+            background-color: var(--yellow);
+            color: var(--black);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--chocolate);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            MetaMesh
+        </div>
+        <div class="menu-toggle bx bx-menu"></div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!-- <span id="open" onclick="opennav()">&#9776;</span> -->
+        <div class="dark-mode-toggle bx bx-moon"></div>
+    </nav>
+
+    <div class="content">
+        <div class="trans">
+            <span>Welcome</span> 
+            <span>to</span> 
+            <span>Meta</span>
+            <span>mesh</span>
+        <p>Your gateway to the decentralized web. Explore, create, and connect in the world of Web3.</p>
+        <a href="start.html" class="btn">Get Started</a>
+    </div>
+
+    <!-- JavaScript for Navbar and Dark/Light Mode -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                darkModeToggle.classList.replace('bx-sun', 'bx-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                darkModeToggle.classList.replace('bx-moon', 'bx-sun');
+            }
+        });
+    </script>
+</body>
+</html>
